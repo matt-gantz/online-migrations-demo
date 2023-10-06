@@ -1,0 +1,2 @@
+ALTER TABLE dbo.PostLinks WITH NOCHECK ADD CONSTRAINT FK_PostLinks_PostId FOREIGN KEY  (PostId) REFERENCES dbo.Posts(Id) 
+ALTER TABLE dbo.PostLinks WITH NOCHECK ADD CONSTRAINT FK_PostLinks_RelatedPostId FOREIGN KEY  (RelatedPostId) REFERENCES dbo.Posts(Id) 
