@@ -17,4 +17,4 @@ EXEC ConfigureMigrateComments @batchsize = 5000
 
 
 --START SQL QUERY STRESS FIRST
-exec MigrateComments
+exec MigrateComments 
