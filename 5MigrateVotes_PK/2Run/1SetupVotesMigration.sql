@@ -1,4 +1,4 @@
-
+--New table
 CREATE TABLE [dbo].[VotesCopy](
 	[Id] int NOT NULL IDENTITY(1,1),
 	[PostId] [int] NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[VotesCopy](
 ) ON [PRIMARY]
 GO
 
-
+--double writes
 ALTER PROC dbo.InsertVotes @PostId int, @VoteId varchar(100)
 AS
 --Note that this could be done without the transaction in the proc
@@ -25,11 +25,11 @@ AS
 BEGIN TRY
 	BEGIN TRAN
 	
-	INSERT INTO dbo.Votes (Id,PostId, UserId, VoteTypeId, CreationDate)
-	SELECT @VoteId, @PostId, @UserId, 1, GETDATE()	
+	INSERT INTO dbo.Votes (Id,PostId, VoteTypeId, CreationDate)
+	SELECT @VoteId, @PostId,  1, GETDATE()	
 
-	INSERT INTO dbo.VotesCopy (LegacyId,PostId, UserId, VoteTypeId, CreationDate)
-	SELECT @VoteId, @PostId, @UserId, 1, GETDATE()
+	INSERT INTO dbo.VotesCopy (LegacyId,PostId, VoteTypeId, CreationDate)
+	SELECT @VoteId, @PostId, 1, GETDATE()
 	
 	COMMIT
 END TRY
