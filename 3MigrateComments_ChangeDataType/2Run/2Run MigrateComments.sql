@@ -1,3 +1,6 @@
+USE StackOverflow2010
+GO
+
 /*
 CLEANUP 
 

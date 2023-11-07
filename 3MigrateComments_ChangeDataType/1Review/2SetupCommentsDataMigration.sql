@@ -8,7 +8,8 @@ ALTER TABLE dbo.Comments
 	CONSTRAINT DF_Comments_ScoreAsInt DEFAULT (-9999)
 
 GO
---double writes
+
+--Modify procedure to perform double writes (to columns)
 ALTER PROC dbo.InsertComments @PostId INT
 AS
 DECLARE @Score INT = (SELECT ABS(CHECKSUM(NEWID()) % 10))
