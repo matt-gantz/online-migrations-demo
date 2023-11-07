@@ -12,7 +12,7 @@ EXEC MonitorMigrateComments
 
 configure
 
-EXEC ConfigureMigrateComments @batchsize = 5000
+EXEC ConfigureMigrateComments @batchsize = 5000, @delaytime = '00:00:00'
 */
 
 exec MigrateComments_ToVarchar

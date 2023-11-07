@@ -1,5 +1,3 @@
-USE StackOverflow2013
-GO
 /*
 CLEANUP 
 
@@ -12,7 +10,7 @@ monitor
 EXEC MonitorPurgePosts
 
 */
-exec PurgePosts @date = '20090101' , @InitialDelayTime = '00:00:05'
+exec PurgePosts @date = '20090601' , @InitialDelayTime = '00:00:00'
 
 
 
