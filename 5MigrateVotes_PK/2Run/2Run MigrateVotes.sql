@@ -1,11 +1,4 @@
-/*
-CLEANUP 
-
-drop table tempdb.dbo.MigrateVotes_Log
-drop table tempdb.dbo.MigrateVotes_Config
-
-
-
-*/
+USE StackOverflow2010
+GO
 
 exec MigrateVotes

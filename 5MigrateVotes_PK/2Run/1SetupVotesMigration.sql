@@ -1,3 +1,6 @@
+USE StackOverflow2010
+GO
+
 --New table
 CREATE TABLE [dbo].[VotesCopy](
 	[Id] int NOT NULL IDENTITY(1,1),
@@ -16,7 +19,7 @@ CREATE TABLE [dbo].[VotesCopy](
 ) ON [PRIMARY]
 GO
 
---double writes
+--Alter proc to use double writes
 ALTER PROC dbo.InsertVotes @PostId int, @VoteId varchar(100)
 AS
 --Note that this could be done without the transaction in the proc
