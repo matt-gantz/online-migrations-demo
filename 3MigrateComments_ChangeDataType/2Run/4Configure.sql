@@ -1,8 +1,11 @@
+USE StackOverflow2010
+GO
+
 EXEC ConfigureMigrateComments @BatchSize = 5000, @DelayTime = '00:00:00'
 
 
 EXEC ConfigureMigrateComments @BatchSize = 10000, @DelayTime = '00:00:00'
-
+--COMPARE records/ sec for batchsizes 20000 vs 50000 
 EXEC ConfigureMigrateComments @BatchSize = 20000, @DelayTime = '00:00:00'
 
 EXEC ConfigureMigrateComments @BatchSize = 50000, @DelayTime = '00:00:00'
